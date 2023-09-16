@@ -44,4 +44,3 @@ $skip_link_url = apply_filters('hello_elementor_skip_link_url', '#content');
 			</div>
 		</div>
 	</header>
-</body>
