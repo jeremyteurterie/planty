@@ -35,7 +35,9 @@ $skip_link_url = apply_filters('hello_elementor_skip_link_url', '#content');
 		</div>
 
 		<div class="item-menu">
-			<div class="item1">Nous rencontrer</div>
+			<div class="item1">
+				<a href="http://planty.local/nous-rencontrer">Nous rencontrer</a>
+			</div>
 			<div class="item2">Admin</div>
 			<div class="btn-nav">
 				<div class="btn-nav-child">
