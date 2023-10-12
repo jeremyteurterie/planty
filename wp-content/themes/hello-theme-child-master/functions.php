@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Theme functions and definitions.
  *
@@ -10,18 +11,19 @@
  * @package HelloElementorChild
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'HELLO_ELEMENTOR_CHILD_VERSION', '2.0.0' );
+define('HELLO_ELEMENTOR_CHILD_VERSION', '2.0.0');
 
 /**
  * Load child theme scripts & styles.
  *
  * @return void
  */
-function hello_elementor_child_scripts_styles() {
+function hello_elementor_child_scripts_styles()
+{
 
 	wp_enqueue_style(
 		'hello-elementor-child-style',
@@ -31,6 +33,37 @@ function hello_elementor_child_scripts_styles() {
 		],
 		HELLO_ELEMENTOR_CHILD_VERSION
 	);
-
 }
-add_action( 'wp_enqueue_scripts', 'hello_elementor_child_scripts_styles', 20 );
+add_action('wp_enqueue_scripts', 'hello_elementor_child_scripts_styles', 20);
+
+// register custom menu
+function register_custom_menu()
+{
+	register_nav_menu('custom-menu', __('Menu personnalisé', 'Hello Elementor Child'));
+}
+add_action('after_setup_theme', 'register_custom_menu');
+
+function add_admin_link($items, $args)
+{
+	if (is_user_logged_in() && $args->theme_location == 'custom-menu') {
+		$items .= '<li id="admin"><a href="' . get_admin_url() . '">Admin</a></li>';
+	}
+	return $items;
+}
+
+add_filter('wp_nav_menu_items', 'add_admin_link', 10, 2);
+
+// function add_admin_link($items, $args)
+// {
+// 	if (is_user_logged_in() && $args->theme_location == 'custom-menu') {
+// 		// Balisage de repère, par exemple, <li>
+// 		$marker = '<li';
+
+// 		// Insérez l'élément "Admin" entre les balisages de repère
+// 		$admin_link = '<li class="admin"><a href="' . get_admin_url() . '">Admin</a></li>';
+// 		$items = str_replace($marker, $admin_link . $marker, $items);
+// 	}
+// 	return $items;
+// }
+
+// add_filter('wp_nav_menu_items', 'add_admin_link', 10, 2);

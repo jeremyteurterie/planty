@@ -52,36 +52,6 @@ body {
   color: #326238;
 }
 
-.item-menu {
-  display: flex;
-  color: black;
-  align-items: center;
-  gap: 75px;
-}
-
-.btn-nav {
-  display: flex;
-  padding-right: 61px;
-  padding-left: 61px;
-  align-items: center;
-  height: 80px;
-  background-color: #dc9f96;
-  font-family: var(--font-syne);
-}
-
-.item1,
-.item2 {
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.commander {
-  color: white;
-  font-weight: 700;
-  font-size: 16px;
-  font-family: var(--font-syne);
-}
-
 .footer {
   display: flex;
   align-items: center;
@@ -91,10 +61,6 @@ body {
   font-weight: 400;
   font-size: 16px;
   font-family: var(--font-syne);
-}
-
-a {
-  color: black;
 }
 
 h2 {
@@ -191,4 +157,41 @@ p {
   flex-direction: row;
   justify-content: space-evenly;
   padding-left: 45px;
+}
+
+#menu-header-menu {
+  display: flex;
+  align-items: center;
+  gap: 75px;
+  padding: 0;
+  list-style-type: none;
+}
+
+#menu-item-790 a {
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+}
+
+#menu-item-789 a {
+  display: flex;
+  padding-right: 61px;
+  padding-left: 61px;
+  align-items: center;
+  height: 80px;
+  background-color: #dc9f96;
+  font-family: var(--font-syne);
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+}
+
+#menu-item-789 a:hover {
+  background-color: #c02e44;
+}
+
+#admin a {
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
 }

@@ -29,20 +29,23 @@ $skip_link_url = apply_filters('hello_elementor_skip_link_url', '#content');
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<header class="nav-bar">
-		<div class='logo'>
-			<img class="logo-icon" alt="" src="http://planty.local/wp-content/uploads/2023/09/logo.png" />
-			<div class="energy-drink">energy drink</div>
+		<div>
+			<a class='logo' href="http://planty.local/">
+				<img class="logo-icon" alt="" src="http://planty.local/wp-content/uploads/2023/09/logo.png" />
+				<div class="energy-drink">energy drink</div>
+			</a>
+
 		</div>
 
 		<div class="item-menu">
 			<div class="item1">
-				<a href="http://planty.local/nous-rencontrer">Nous rencontrer</a>
-			</div>
-			<div class="item2">Admin</div>
-			<div class="btn-nav">
-				<div class="btn-nav-child">
-					<a class="commander" href="http://planty.local/commander">Commander</a>
-				</div>
+				<?php
+				wp_nav_menu(array(
+					'theme_location' => 'custom-menu',
+					'container' => false, // N'inclut pas de conteneur autour du menu
+				));
+				?>
 			</div>
 		</div>
+
 	</header>
