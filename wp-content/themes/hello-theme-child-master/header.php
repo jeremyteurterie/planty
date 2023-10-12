@@ -41,7 +41,7 @@ $skip_link_url = apply_filters('hello_elementor_skip_link_url', '#content');
 			<div class="item2">Admin</div>
 			<div class="btn-nav">
 				<div class="btn-nav-child">
-					<b class="commander">Commander</b>
+					<a class="commander" href="http://planty.local/commander">Commander</a>
 				</div>
 			</div>
 		</div>
