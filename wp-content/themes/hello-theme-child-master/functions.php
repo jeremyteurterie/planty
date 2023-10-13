@@ -43,6 +43,7 @@ function register_custom_menu()
 }
 add_action('after_setup_theme', 'register_custom_menu');
 
+// hook for admin link
 function add_admin_link($items, $args)
 {
 	if (is_user_logged_in() && $args->theme_location == 'custom-menu') {
@@ -52,18 +53,3 @@ function add_admin_link($items, $args)
 }
 
 add_filter('wp_nav_menu_items', 'add_admin_link', 10, 2);
-
-// function add_admin_link($items, $args)
-// {
-// 	if (is_user_logged_in() && $args->theme_location == 'custom-menu') {
-// 		// Balisage de repère, par exemple, <li>
-// 		$marker = '<li';
-
-// 		// Insérez l'élément "Admin" entre les balisages de repère
-// 		$admin_link = '<li class="admin"><a href="' . get_admin_url() . '">Admin</a></li>';
-// 		$items = str_replace($marker, $admin_link . $marker, $items);
-// 	}
-// 	return $items;
-// }
-
-// add_filter('wp_nav_menu_items', 'add_admin_link', 10, 2);
