@@ -187,7 +187,6 @@ p {
   display: flex;
   align-items: center;
   gap: 75px;
-  padding: 0;
   list-style-type: none;
 }
 
@@ -206,7 +205,37 @@ footer a {
 
 /* Responsive */
 
+@media (max-width: 1024px) {
+  #menu-header-menu {
+    gap: 150px;
+  }
+  .logo {
+    align-items: center;
+    height: 100px;
+  }
+  .item-menu {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  .nav-bar {
+    flex-direction: column;
+    gap: 0px;
+    height: auto;
+  }
+}
+
 @media (max-width: 768px) {
+  .item-menu {
+    display: block;
+  }
+  #menu-header-menu {
+    justify-content: center;
+    padding: 40px;
+    gap: 75px;
+  }
+  .btn-nav a {
+    justify-content: center;
+  }
   .form {
     flex-direction: column;
     align-items: center;
