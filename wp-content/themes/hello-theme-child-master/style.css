@@ -188,8 +188,19 @@ footer a {
   color: #000000;
 }
 
-/* Responsive */
+.elementor-36
+  .elementor-element.elementor-element-7f3c7e8:not(
+    .elementor-motion-effects-element-type-background
+  ) {
+  border-radius: 0 0 150% 150%;
+  box-shadow: 0 10px 0 #dcd5cf;
+}
 
+.elementor-element.elementor-element-703a61b.e-flex.e-con-boxed.e-con.e-parent {
+  border-radius: 0 0 15% 15%;
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
   .logo-icon {
     padding-left: 0px;
